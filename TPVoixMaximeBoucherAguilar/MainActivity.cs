@@ -138,7 +138,7 @@ namespace TPVoixMaximeBoucherAguilar
                             cpt += 1;
                         }
 
-                        if (cpt > 12) cpt = 0;
+                        if (cpt > 20) cpt = 0;
                     }
                 });
             };
@@ -153,7 +153,7 @@ namespace TPVoixMaximeBoucherAguilar
                     accelerometerReader.PlayInclinedSongs();
                 });
                 return true;
-            } else if (cpt == 6 || cpt == 12)
+            } else if (cpt == 10 || cpt == 20)
             {
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
