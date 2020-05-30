@@ -74,5 +74,10 @@ namespace TPVoixMaximeBoucherAguilar.Essentials
             Shock2 = false;
             Shock3 = false;
         }
+
+        public bool ShockSongIsPlaying()
+        {
+            return (ShockMedia1.IsPlaying || ShockMedia2.IsPlaying || ShockMedia3.IsPlaying);
+        }
     }
 }

@@ -40,8 +40,6 @@ namespace TPVoixMaximeBoucherAguilar
             accBefore = new AccelerometerPosition();
             accNow = new AccelerometerPosition();
 
-            accelerometerReader.ToggleAccelerometer();
-
             buttonVoix1.Click += (sender, e) =>
             {
                 Setvoices(button1);
@@ -150,14 +148,14 @@ namespace TPVoixMaximeBoucherAguilar
             {
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    accelerometerReader.PlayInclinedSongs();
+                    accelerometerReader.PlayInclinedSongs(shakeDetector);
                 });
                 return true;
             } else if (cpt == 10 || cpt == 20)
             {
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    accelerometerReader.PlayStableSongs();
+                    accelerometerReader.PlayStableSongs(shakeDetector);
                 });
             }
             return false;

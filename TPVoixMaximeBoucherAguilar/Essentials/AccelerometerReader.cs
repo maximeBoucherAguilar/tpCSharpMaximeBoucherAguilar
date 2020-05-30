@@ -58,23 +58,23 @@ namespace TPVoixMaximeBoucherAguilar.Essentials
             }
         }
 
-        public void PlayInclinedSongs()
+        public void PlayInclinedSongs(ShakeDetector sd)
         {
             if (Start)
             {
-                if (Acc1 && !AccInclinedMedia2.IsPlaying && !AccInclinedMedia3.IsPlaying)
+                if (Acc1 && !AccInclinedMedia2.IsPlaying && !AccInclinedMedia3.IsPlaying && !sd.ShockSongIsPlaying())
                 {
                     AccInclinedMedia1.Start();
                     Acc1 = false;
                     Acc2 = true;
                 }
-                else if (Acc2 && !AccInclinedMedia1.IsPlaying && !AccInclinedMedia3.IsPlaying)
+                else if (Acc2 && !AccInclinedMedia1.IsPlaying && !AccInclinedMedia3.IsPlaying && !sd.ShockSongIsPlaying())
                 {
                     AccInclinedMedia2.Start();
                     Acc2 = false;
                     Acc3 = true;
                 }
-                else if (Acc3 && !AccInclinedMedia1.IsPlaying && !AccInclinedMedia2.IsPlaying)
+                else if (Acc3 && !AccInclinedMedia1.IsPlaying && !AccInclinedMedia2.IsPlaying && !sd.ShockSongIsPlaying())
                 {
                     AccInclinedMedia3.Start();
                     Acc3 = false;
@@ -83,17 +83,17 @@ namespace TPVoixMaximeBoucherAguilar.Essentials
             }
         }
 
-        public void PlayStableSongs()
+        public void PlayStableSongs(ShakeDetector sd)
         {
             if (Start)
             {
-                if (Acc4 && !AccStableMedia2.IsPlaying)
+                if (Acc4 && !AccStableMedia2.IsPlaying && !sd.ShockSongIsPlaying())
                 {
                     AccStableMedia1.Start();
                     Acc4 = false;
                     Acc5 = true;
                 }
-                else if (Acc5 && !AccStableMedia1.IsPlaying)
+                else if (Acc5 && !AccStableMedia1.IsPlaying && !sd.ShockSongIsPlaying())
                 {
                     AccStableMedia2.Start();
                     Acc5 = false;
